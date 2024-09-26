@@ -4,7 +4,7 @@ author: "Alex Lung"
 date: "9/29/2024"
 format: html
 editor: source
-  markdown: 
+markdown: 
     wrap: 72
 embed-resources: true
 execute:
@@ -22,8 +22,7 @@ Execution options specify how the R code in your Quarto document should be displ
 
 **Question 2** -- Add an `execute` line to your YAML that includes the following options, (1) your source code is always output on the page, and (2) your document will render even if there are errors.
 
-
-## Running the Provided Code
+## Guinea Pigs Tooth Growth Dataset
 
 ```{r}
 #| eval: false
@@ -45,9 +44,9 @@ summary(ToothGrowth)
 
 *This dataset investigates the effect of Vitamin C on tooth growth in Guinea Pigs.*
 
-*The two supplement delivery methods include OJ (\_\_\_\_) and VC (\_\_\_\_).*
+*The two supplement delivery methods include OJ (orange juice) and VC (ascorbic acid).*
 
-*`ToothGrowth` is a data frame with **observations and*** \_ variables.
+*`ToothGrowth` is a data frame with 60 observations and 3 variables.*
 
 **Question 5** -- *Before* the code chunk, change the "Running the Provided Code" section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset).
 
@@ -58,8 +57,26 @@ summary(ToothGrowth)
 ```{r}
 #| echo: true
 #| label: creating-a-plot
+#| layout-ncol: 2
+#| fig-align: 'center'
+#| fig-cap: "Charts"
+#| fig-subcap: 
+#|  - "Tooth Length versus Supplement"
+#|  - "Tooth Length versus Dose of Supplement"
 
-plot(pressure)
+library(tidyverse)
+
+ggplot(data = ToothGrowth, 
+       mapping = aes(x = supp, y = len)) +
+  geom_boxplot() +
+  labs(x = "Supplement", y = "Length of Teeth (mm)")
+
+ToothGrowth %>% 
+  mutate(dose = as.factor(dose)) %>% 
+  ggplot(mapping = aes(x = dose, y = len)) +
+  geom_boxplot() +
+  labs(x = "Dose of Supplement (mg/day)", y = "Length of Teeth (mm)")
+
 ```
 
 Now, run this code chunk! You should see two side-by-side boxplots, one plot comparing tooth length between the two supplement delivery methods and one plot comparing tooth length between the three different dosages uses.
