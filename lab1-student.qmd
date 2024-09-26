@@ -4,8 +4,6 @@ author: "Alex Lung"
 date: "9/29/2024"
 format: html
 editor: source
-markdown: 
-    wrap: 72
 embed-resources: true
 execute:
   echo: true
@@ -25,7 +23,6 @@ Execution options specify how the R code in your Quarto document should be displ
 ## Guinea Pigs Tooth Growth Dataset
 
 ```{r}
-#| eval: false
 #| echo: true
 #| label: practicing-running-code
 
@@ -59,7 +56,7 @@ summary(ToothGrowth)
 #| label: creating-a-plot
 #| layout-ncol: 2
 #| fig-align: 'center'
-#| fig-cap: "Charts"
+#| fig-cap: "Graphs"
 #| fig-subcap: 
 #|  - "Tooth Length versus Supplement"
 #|  - "Tooth Length versus Dose of Supplement"
