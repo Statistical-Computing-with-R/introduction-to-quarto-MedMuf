@@ -83,3 +83,9 @@ Now, run this code chunk! You should see two side-by-side boxplots, one plot com
 **Question 8** -- Specify in the code chunk options that these boxplots should be **center aligned**.
 
 **Question 9** -- Specify a **figure caption** for the boxplots (using a code-chunk option).
+
+```{r}
+
+
+```
+
