@@ -85,7 +85,14 @@ Now, run this code chunk! You should see two side-by-side boxplots, one plot com
 **Question 9** -- Specify a **figure caption** for the boxplots (using a code-chunk option).
 
 ```{r}
+t.test(ToothGrowth$len ~ ToothGrowth$supp)
 
 
 ```
 
+## Numbered List
+**These are the interpretations of the data that was provided by the Welch Two Sample t-test above.**
+
+*1. As the p-value is 0.06, we find the data to not be statistically significant and so we do not reject the null hypothesis of the mean tooth lengths between the two supplements as the same.*
+
+*2. With a confidence interval of 95 percent, we can interpret that we are 95 percent certain that the mean growth difference between the two supplements is between -0.171 mm and 7.571.*
