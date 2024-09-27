@@ -8,6 +8,7 @@ embed-resources: true
 execute:
   echo: true
   error: true
+code-fold: true
 ---
 
 # Part Two: Exploring Quarto Documents
